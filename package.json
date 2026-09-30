@@ -1,0 +1,30 @@
+{
+  "name": "photorealistic-book-app",
+  "version": "1.0.0",
+  "description": "Photorealistic React app for books with admin login, export ports, and Meta AI task master",
+  "main": "server.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node server.js",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "dev": "concurrently \"nodemon server.js\" \"cd client && npm start\"",
+    "ai-update": "node ai-agent/taskmaster.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "jsonwebtoken": "^9.1.2",
+    "bcryptjs": "^2.4.3",
+    "mongoose": "^8.0.0",
+    "axios": "^1.6.0",
+    "pdfkit": "^0.13.0",
+    "csvtojson": "^2.0.10",
+    "node-schedule": "^2.1.1",
+    "concurrently": "^8.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
